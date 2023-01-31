@@ -17,11 +17,11 @@ void Calculation((double b, double k) first, (double b, double k) second)
 {
     double x = (-second.b + first.b)/(-first.k + second.k);
     double y = second.k * x + second.b;
-    PrintRCalculation (first, second);
+    PrintValue (first, second);
     PrintResult(x, y);
 }
 
-void PrintRCalculation((double b, double k) first, (double b, double k) second)
+void PrintValue((double b, double k) first, (double b, double k) second)
 {
     Console.Write($"b1 = {first.b}, k1 = {first.k}, ");
     Console.Write($"b2 = {second.b}, k2 = {second.k} ");
