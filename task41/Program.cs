@@ -2,7 +2,7 @@
 // 0, 7, 8, -2, -2 -> 2
 // 1, -7, 567, 89, 223-> 3
 
-int[] GetArr(string text)
+int[] GetArr(string? text)
 {
     Console.Write(text);
     int num = int.Parse(Console.ReadLine());

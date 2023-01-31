@@ -15,9 +15,13 @@
 
 void Calculation((double b, double k) first, (double b, double k) second)
 {
-    double x = (-second.b + first.b)/(-first.k + second.k);
+    if ((first.k == second.k) && ((first.b == second.b)))
+        DetectException(1);
+    else if (first.k == second.k)
+        DetectException(2);
+    double x = (-second.b + first.b) / (-first.k + second.k);
     double y = second.k * x + second.b;
-    PrintValue (first, second);
+    PrintValue(first, second);
     PrintResult(x, y);
 }
 
@@ -30,6 +34,15 @@ void PrintValue((double b, double k) first, (double b, double k) second)
 void PrintResult(double x, double y)
 {
     Console.WriteLine($"-> ({x}; {y})");
+}
+
+void DetectException(int code)
+{
+    if (code == 1)
+        Console.WriteLine("Прямые совпадают");
+    else
+        Console.WriteLine("Прямые параллельны");
+    Environment.Exit(0);
 }
 
 (double, double) firstLine = GetValue(1);
